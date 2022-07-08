@@ -14,4 +14,21 @@ class Product extends Model
     public $timestamps = false;
 
     protected $fillable = ['name', 'description', 'price_cost', 'price_resale'];
+
+    public function category() 
+    {
+        //belongsTo refere a uma categoria
+        return $this->belongsTo(Category::class);
+    }
+
+    public function brands()
+    {
+        //hasMany refere a varias categorias
+        return $this->belongsTo(Brand::class);
+    }
+
+    public function providers()
+    {
+        return $this->belongsTo(Provider::class);
+    }
 }

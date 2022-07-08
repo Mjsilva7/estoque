@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('description');
             $table->decimal('price_cost', 8,2);
             $table->decimal('price_resale', 8,2);
+            $table->unsignedInteger('category_id');
+            $table->unsignedInteger('provider_id');
+            $table->unsignedInteger('brand_id');
         });
     }
 

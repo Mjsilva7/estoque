@@ -13,7 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('products', function ($table){
+            $table->foreign('category_id')->references('id')->on('categories');    
+            $table->foreign('provider_id')->references('id')->on('providers');    
+            $table->foreign('brand_id')->references('id')->on('brands');    
+        });
     }
 
     /**
